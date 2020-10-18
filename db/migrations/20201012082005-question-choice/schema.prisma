@@ -2,10 +2,8 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 datasource db {
-  provider = "postgres"
-  url      = env("DATABASE_URL")
-  // url      = "file:./db.sqlite"
-
+  provider = "sqlite"
+  url = "***"
 }
 
 generator client {
@@ -15,10 +13,10 @@ generator client {
 // --------------------------------------
 
 model User {
-  id             Int       @id @default(autoincrement())
+  id             Int       @default(autoincrement()) @id
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
-  name           String
+  name           String?
   email          String    @unique
   hashedPassword String?
   role           String    @default("user")
@@ -26,7 +24,7 @@ model User {
 }
 
 model Session {
-  id                 Int       @id @default(autoincrement())
+  id                 Int       @default(autoincrement()) @id
   createdAt          DateTime  @default(now())
   updatedAt          DateTime  @updatedAt
   expiresAt          DateTime?
@@ -40,26 +38,19 @@ model Session {
 }
 
 model Question {
-  id        Int      @id @default(autoincrement())
+  id        Int      @default(autoincrement()) @id
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  text      String
-  choices   Choice[]
+  text      String   
+  choices   Choice[] 
 }
 
 model Choice {
-  id         Int      @id @default(autoincrement())
+  id         Int      @default(autoincrement()) @id
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
-  text       String
+  text       String   
   votes      Int      @default(0)
   question   Question @relation(fields: [questionId], references: [id])
-  questionId Int
-}
-
-model Project {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  name      String
+  questionId Int      
 }
