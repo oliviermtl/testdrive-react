@@ -2,7 +2,7 @@
   "name": "testdrive",
   "version": "1.0.0",
   "scripts": {
-    "start": " blitz start --production -H 0.0.0.0 -p 3000",
+    "start": " blitz start --production -H 0.0.0.0 -p $PORT
     "studio": "blitz db studio",
     "build": "blitz build",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
