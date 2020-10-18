@@ -2,7 +2,7 @@
   "name": "testdrive",
   "version": "1.0.0",
   "scripts": {
-    "start": "docker-compose up -d && blitz start",
+    "start": "blitz start",
     "studio": "blitz db studio",
     "build": "blitz build",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
