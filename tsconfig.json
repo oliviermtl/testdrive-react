@@ -19,9 +19,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-      "checkJs": false
+    "checkJs": false
   },
-<<<<<<< HEAD
   "exclude": [
     "node_modules",
   ],
@@ -31,8 +30,3 @@
     "**/*.tsx"
   ]
 }
-=======
-  "exclude": ["node_modules", "**/*.ts", "**/*.tsx"],
-  "include": ["next-env.d.ts"]
-}
->>>>>>> 03da21cdf3ff4b4da91e4a18aedcfa6b6249e767
