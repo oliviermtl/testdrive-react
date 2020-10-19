@@ -9,7 +9,7 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      - key: DATABASE_URL
+      - key: postgres://uhapsovgvmvlef:5b24b60b5141e0b16a82ddba0cd7814e883fe43a233acc2b5b7b9184d9806861@ec2-54-75-225-52.eu-west-1.compute.amazonaws.com:5432/d22cdj4g6ft1n1
         fromDatabase:
           name: blitzapp-db
           property: connectionString
