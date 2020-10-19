@@ -1,7 +1,7 @@
 import { Ctx } from "blitz"
 import db, { FindManyQuestionArgs } from "db"
 
-type GetQuestionsInput = Pick<FindManyQuestionArgs, "where" | "orderBy" | "skip" | "take">
+type GetQuestionsInput = Pick<FindManyQuestionArgs, "where" | "orderBy" | "cursor" | "skip" | "take">
 
 export default async function getQuestions(
   { where, orderBy, cursor, take,skip }: GetQuestionsInput,
